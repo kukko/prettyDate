@@ -1,43 +1,43 @@
 <?php
-	function szepDatum($bemenet, $mod="rovid", $nap=false){
-		$honapok=array("Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December");
-		$honapokRovid=array("Jan", "Feb", "Már", "Ápr", "Máj", "Jún", "Júl", "Aug", "Szep", "Okt", "Nov", "Dec");
-		if (substr($bemenet, 0, 10)==date("Y-m-d")){
-			$kimenet="";
-			if ($nap=true){
-				$kimenet="Ma ";
+	function szepDatum($input, $mod="short", $day=false){
+		$months=array("Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December");
+		$monthsShort=array("Jan", "Feb", "Már", "Ápr", "Máj", "Jún", "Júl", "Aug", "Szep", "Okt", "Nov", "Dec");
+		if (substr($input, 0, 10)==date("Y-m-d")){
+			$output="";
+			if ($day=true){
+				$output="Ma ";
 			}
-			$kimenet.=substr($bemenet, 11, 5);
+			$output.=substr($input, 11, 5);
 		}
 		else{
-			if (substr($bemenet, 0, 4)==date("Y")){
-				$datum=substr($bemenet, 5, 5);
-				list($honap, $nap)=explode("-", $datum);
-				if ($mod=="hosszu" || $mod=="superhosszu"){
-					$honap=$honapok[$honap-1];
+			if (substr($input, 0, 4)==date("Y")){
+				$date=substr($input, 5, 5);
+				list($month, $day)=explode("-", $date);
+				if ($mod=="long" || $mod=="superlong"){
+					$month=$months[$month-1];
 				}
-				if ($mod=="rovid"){
-					$honap=$honapokRovid[$honap-1];
+				if ($mod=="short"){
+					$month=$monthsShort[$month-1];
 				}
-				$kimenet=$honap." ".$nap.".";
+				$output=$month." ".$day.".";
 			}
 			else{
-				$datum=substr($bemenet, 0, 10);
-				list($ev, $honap, $nap)=explode("-", $datum);
-				if ($mod=="hosszu" || $mod=="superhosszu"){
-					$honap=$honapok[$honap-1];
+				$date=substr($input, 0, 10);
+				list($year, $month, $day)=explode("-", $date);
+				if ($mod=="long" || $mod=="superlong"){
+					$month=$months[$month-1];
 				}
-				if ($mod=="rovid"){
-					$honap=$honapokRovid[$honap-1];
+				if ($mod=="short"){
+					$month=$monthsShort[$month-1];
 				}
-				if ($mod=="superhosszu"){
-					$kimenet=$ev." ".$honap." ".$nap.".";
+				if ($mod=="superlong"){
+					$output=$year." ".$month." ".$day.".";
 				}
 				else{
-					$kimenet="'".substr($ev, -2)." ".$honap." ".$nap.".";
+					$output="'".substr($year, -2)." ".$month." ".$day.".";
 				}
 			}
 		}
-		return $kimenet;
+		return $output;
 	}
 ?>
