@@ -1,5 +1,5 @@
 <?php
-	function szepDatum($input, $mod="short", $day=false, $lang="HU"){
+	function prettyDate($input, $mod="short", $day=false, $lang="HU"){
 		$localize=array(
 			"today"=>array(
 				"HU"=>"Ma ",
