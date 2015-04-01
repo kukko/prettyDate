@@ -6,27 +6,27 @@
 				"EN"=>"Today "
 			),
 			"months"=>array(
-				"long"=>array(
-					"HU"=>array(
-						"Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December")
-						),
-					"EN"=>array(
-						"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
-					)
-				),
-				"short"=>array(
-					"HU"=>array(
-						"Jan", "Feb", "Már", "Ápr", "Máj", "Jún", "Júl", "Aug", "Szep", "Okt", "Nov", "Dec"
+					"long"=>array(
+						"HU"=>array(
+							"Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"
+							),
+						"EN"=>array(
+							"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+						)
 					),
-					"EN"=>array(
-						"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+					"short"=>array(
+						"HU"=>array(
+							"Jan", "Feb", "Már", "Ápr", "Máj", "Jún", "Júl", "Aug", "Szep", "Okt", "Nov", "Dec"
+						),
+						"EN"=>array(
+							"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+						)
 					)
 				)
-			)
-		);
+			);
 		if (substr($input, 0, 10)==date("Y-m-d")){
 			$output="";
-			if ($day=true){
+			if ($day==true){
 				$output=$localize["today"][$lang];
 			}
 			$output.=substr($input, 11, 5);
