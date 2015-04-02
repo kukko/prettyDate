@@ -3,15 +3,19 @@
 		$localize=array(
 			"today"=>array(
 				"HU"=>"Ma ",
-				"EN"=>"Today "
+				"EN"=>"Today ",
+				"DE"=>"Heute "
 			),
 			"months"=>array(
 					"long"=>array(
 						"HU"=>array(
 							"Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"
-							),
+						),
 						"EN"=>array(
 							"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+						),
+						"DE"=>array(
+							"Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"
 						)
 					),
 					"short"=>array(
@@ -20,6 +24,9 @@
 						),
 						"EN"=>array(
 							"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+						),
+						"DE"=>array(
+							"Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"
 						)
 					)
 				)
